@@ -1,12 +1,15 @@
 import * as types from '@firebase/firestore-types';
 
 export namespace firestore {
-  export interface CollectionReference extends types.CollectionReference {}
-  export interface Query extends types.Query {}
+  export interface CollectionReference {
+    add: (data: any) => Promise<firestore.DocumentReference>;
+    doc: (id: string) => any;
+  }
+  export type Query = any;
   export interface QuerySnapshot extends types.QuerySnapshot {}
   export interface GeoPoint extends types.GeoPoint {}
-  export interface DocumentReference extends types.DocumentReference {}
-  export interface Firestore extends types.FirebaseFirestore {}
+  export type DocumentReference = any;
+  export type Firestore = any;
   //   export interface FirebaseNamespace {
   //     firestore?: {
   //       (app?: FirebaseApp): types.FirebaseFirestore;
